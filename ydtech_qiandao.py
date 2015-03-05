@@ -97,7 +97,7 @@ if __name__ == '__main__':
 	content   = 'LTEºóÌ¨'
 	device    = 'iphone'
 	deviceID  = '057A7BDB-D460-43C2-8D7D-F0AF059556B7'
-	message   = address+QianDao_action(user_key,longitude,latitude,address,content,device,deviceID).encode('uft-8')
+	message   = address.decode('utf-8') + QianDao_action(user_key,longitude,latitude,address,content,device,deviceID)
 	print message
 	sender    = ''
 	passwd    = ''
