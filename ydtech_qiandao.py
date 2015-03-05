@@ -48,10 +48,10 @@ def getQDContent_action(user_key):
 	except urllib2.HTTPError, e:
 		print  "Server Return Error Code %s" %e.code
 
-def QianDao_action(user_key,longitude,latitude,address,content,device,deviceID):
+def QianDao_action(user_key,bid,longitude,latitude,address,content,device,deviceID):
 	url='http://isite.yindatech.com:8833/iSite/phone3_6!QianDao.action?'
 	getData=urllib.urlencode({'key':user_key,
-							  'bid':30774,
+							  'bid':bid,
 							  'longitude':longitude,
 							  'latitude':latitude,
 							  'address':address,
@@ -91,13 +91,14 @@ if __name__ == '__main__':
 	password = ''
 	user_key = login_action(usercode,password)
 	#getQDContent_action(user_key)
+	bid       = 30774
 	longitude = '121.551642'
 	latitude  = '29.879912'
 	address   = '浙江省宁波市海曙区月湖街道中山西路138号（移动海曙分公司）'
 	content   = 'LTE后台'
 	device    = 'iphone'
 	deviceID  = '057A7BDB-D460-43C2-8D7D-F0AF059556B7'
-	message   = address.decode('utf-8') + QianDao_action(user_key,longitude,latitude,address,content,device,deviceID)
+	message   = address.decode('utf-8') + QianDao_action(user_key,bid,longitude,latitude,address,content,device,deviceID)
 	print message
 	sender    = ''
 	passwd    = ''
