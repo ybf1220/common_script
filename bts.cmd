@@ -31,6 +31,7 @@ for /F "tokens=5" %%p in (T:\bts_program.txt) do (
   ) 
 )
 pause
+exit
 
 :all
 echo Searching all connection......
@@ -46,4 +47,4 @@ for /F "tokens=3,5*" %%a in (T:\bts_program.txt) do (
   ) 
 )
 pause
-
+exit
